@@ -39,6 +39,8 @@ namespace PrefabPainter
             randomRotationY = GUILayout.Toggle(randomRotationY, "Y");
             randomRotationZ = GUILayout.Toggle(randomRotationZ, "Z");
             EditorGUILayout.EndHorizontal();
+            GUILayout.Label("Rotation Threshold");
+            rotationThreshold = GUILayout.HorizontalSlider(0, 360);
 
             GUILayout.Space(3);
             EditorGUILayout.EndVertical();
