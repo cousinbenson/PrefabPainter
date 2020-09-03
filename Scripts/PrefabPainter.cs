@@ -544,10 +544,11 @@ namespace PrefabPainter
                 bool randomRotationX = paintObjects[rndIndex].getRandomRotationX();
                 bool randomRotationY = paintObjects[rndIndex].getRandomRotationY();
                 bool randomRotationZ = paintObjects[rndIndex].getRandomRotationZ();
+                float rotationThreshold = paintObjects[rndIndex].getRotationThreshold();
 
-                if (randomRotationX) go.transform.Rotate(Vector3.right, Random.Range(0, 360));
+                if (randomRotationX) go.transform.Rotate(Vector3.right, Random.Range(-rotationThreshold, rotationThreshold));
                 if (randomRotationY) go.transform.Rotate(Vector3.up, Random.Range(0, 360));
-                if (randomRotationZ) go.transform.Rotate(Vector3.forward, Random.Range(0, 360));
+                if (randomRotationZ) go.transform.Rotate(Vector3.forward, Random.Range(-rotationThreshold, rotationThreshold));
 
                 Vector2 scale = paintObjects[rndIndex].getSize();
                 if (scale != Vector2.one && scale != Vector2.zero)

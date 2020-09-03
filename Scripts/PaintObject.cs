@@ -11,6 +11,7 @@ namespace PrefabPainter
         private bool randomRotationX = false;
         private bool randomRotationY = false;
         private bool randomRotationZ = false;
+        [Range(0, 360)] private float rotationThreshold = 0f;
         private string prefabName;
 
         private bool settingsToggled;
@@ -57,6 +58,11 @@ namespace PrefabPainter
         public bool getRandomRotationZ()
         {
             return randomRotationZ;
+        }
+
+        public float getRotationThreshold()
+        {
+            return rotationThreshold;
         }
 
         public Vector2 getSize()
